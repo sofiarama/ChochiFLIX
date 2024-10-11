@@ -77,7 +77,7 @@ function mostrarPelis(peliculas) {
         peliculas.forEach(pelicula => {
             const peliculaHTML = `
                 <li class="list-group-item">
-                    <div type="button" data-bs-toggle="offcanvas" data-bs-target="#offCTop" aria-labelledby="offcanvasTop" class="pelis-info">
+                    <div type="button" data-bs-toggle="offcanvas" data-bs-target="#oc${pelicula.id}" aria-labelledby="offcanvasTop" class="pelis-info">
                         <h3>${pelicula.title}</h2> 
                         <p>${pelicula.tagline}</p>
                     </div>
@@ -85,7 +85,7 @@ function mostrarPelis(peliculas) {
                         ${estrellas((pelicula.vote_average) / 2)}
                     </div>
 
-                    <div class="offcanvas offcanvas-top" tabindex="-1" id="offCTop" aria-labelledby="offcanvasTopLabel">
+                    <div class="offcanvas offcanvas-top" tabindex="-1" id="oc${pelicula.id}" aria-labelledby="offcanvasTopLabel">
                         <div class="offcanvas-header">
                             <h5 class="offcanvas-title" id="offcanvasTopLabel">${pelicula.title}</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
